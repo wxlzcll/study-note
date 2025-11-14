@@ -11,10 +11,12 @@
             "id": "9a96e2851bb9bccf",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "新标签页"
+              "type": "pdf",
+              "state": {
+                "file": "快速入手Apollo控制代码以及实车实验.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "快速入手Apollo控制代码以及实车实验"
             }
           }
         ]
@@ -123,12 +125,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "快速入手Apollo控制代码以及实车实验.pdf",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "快速入手Apollo控制代码以及实车实验 的大纲"
             }
           },
           {
@@ -152,8 +155,8 @@
             "state": {
               "type": "git-view",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "git-view"
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           }
         ],
