@@ -1,0 +1,216 @@
+{
+  "main": {
+    "id": "cca903b08d84442a",
+    "type": "split",
+    "children": [
+      {
+        "id": "c8444f0f7c3fabe7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9a96e2851bb9bccf",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新标签页"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "b8b1590ae7fbb063",
+    "type": "split",
+    "children": [
+      {
+        "id": "050b88dc9047a823",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a6e030eea1e1f162",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "e56c33d04bd053ca",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#docker",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "693a9e887cfb856c",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "6dcf07d9f8ad5626",
+    "type": "split",
+    "children": [
+      {
+        "id": "69e40e99f33a29b5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "bab9894eaf6d2952",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "嵌入式学习笔记/引脚复用知识.md",
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "引脚复用知识 的反向链接列表"
+            }
+          },
+          {
+            "id": "0545f01ca577922f",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "嵌入式学习笔记/引脚复用知识.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "引脚复用知识 的出链列表"
+            }
+          },
+          {
+            "id": "fcd8cd463bdb4202",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "大纲"
+            }
+          },
+          {
+            "id": "8c2a85d77c902752",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "47a7a9553b9d124c",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "git-view"
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 336.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "bases:创建新数据库": false,
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "obsidian-git:Open Git source control": false
+    }
+  },
+  "active": "9a96e2851bb9bccf",
+  "lastOpenFiles": [
+    "README.md",
+    "实验笔记/git学习与代码管理.md",
+    "实验笔记/Protobuf.md",
+    "实验笔记/Docker.md",
+    "实验笔记/Bazel.md",
+    "实验笔记/快速入手Apollo控制代码以及实车实验.md",
+    "实验笔记/高精地图制作.md",
+    "Docker.pdf",
+    "快速入手Apollo控制代码以及实车实验.pdf",
+    "嵌入式学习笔记/引脚复用知识.md",
+    "随手记录.md",
+    "实验笔记/图片/微信图片_20250522094515.png",
+    "实验笔记/图片/微信图片_20250522094522.png",
+    "实验笔记/dag.md",
+    "未命名",
+    "嵌入式学习笔记",
+    "C++提高编程.md",
+    "实验笔记/图片/概述图.jpeg",
+    "实验笔记/图片/1784943215635.png",
+    "实验笔记/图片/1736822857972.png",
+    "实验笔记/图片/1711003101340.png",
+    "实验笔记/FR-09+PRO+APOLLO+7.0_用户使用手册_V1.0.3（new）.docx",
+    "控制实验.pdf",
+    "实验笔记/图片/1736838277843.png",
+    "实验笔记/图片/1736838205151 1.png",
+    "实验笔记/图片/1736838205151.png",
+    "实验笔记/图片/1736837689463.png",
+    "项目计划.md",
+    "实验笔记/控制实验关系.canvas",
+    "实验笔记/图片",
+    "Linux基础命令.md",
+    "a'a.md",
+    "实验笔记",
+    "欢迎.md"
+  ]
+}
