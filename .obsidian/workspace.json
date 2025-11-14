@@ -160,7 +160,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -179,7 +179,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "9a96e2851bb9bccf",
+  "active": "47a7a9553b9d124c",
   "lastOpenFiles": [
     "README.md",
     "实验笔记/git学习与代码管理.md",
