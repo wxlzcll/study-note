@@ -4,19 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "c8444f0f7c3fabe7",
+        "id": "de9c43ab104b0062",
         "type": "tabs",
         "children": [
           {
-            "id": "9a96e2851bb9bccf",
+            "id": "68c32c11bbf8d965",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "快速入手Apollo控制代码以及实车实验.pdf"
+                "file": "嵌入式学习笔记/引脚复用知识.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "快速入手Apollo控制代码以及实车实验"
+              "icon": "lucide-file",
+              "title": "引脚复用知识"
             }
           }
         ]
@@ -51,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#docker",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -125,13 +127,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "快速入手Apollo控制代码以及实车实验.pdf",
+                "file": "嵌入式学习笔记/引脚复用知识.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "快速入手Apollo控制代码以及实车实验 的大纲"
+              "title": "引脚复用知识 的大纲"
             }
           },
           {
@@ -148,19 +150,9 @@
               "icon": "lucide-tags",
               "title": "标签"
             }
-          },
-          {
-            "id": "47a7a9553b9d124c",
-            "type": "leaf",
-            "state": {
-              "type": "git-view",
-              "state": {},
-              "icon": "git-pull-request",
-              "title": "Source Control"
-            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -175,12 +167,15 @@
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "obsidian-git:Open Git source control": false
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "47a7a9553b9d124c",
+  "active": "a6e030eea1e1f162",
   "lastOpenFiles": [
+    "未命名 2.base",
+    "未命名 1.base",
+    "未命名.base",
+    "嵌入式学习笔记/引脚复用知识.md",
     "README.md",
     "实验笔记/git学习与代码管理.md",
     "实验笔记/Protobuf.md",
@@ -190,7 +185,6 @@
     "实验笔记/高精地图制作.md",
     "Docker.pdf",
     "快速入手Apollo控制代码以及实车实验.pdf",
-    "嵌入式学习笔记/引脚复用知识.md",
     "随手记录.md",
     "实验笔记/图片/微信图片_20250522094515.png",
     "实验笔记/图片/微信图片_20250522094522.png",
