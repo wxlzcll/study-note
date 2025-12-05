@@ -11,12 +11,14 @@
             "id": "9a96e2851bb9bccf",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "快速入手Apollo控制代码以及实车实验.pdf"
+                "file": "实验笔记/git学习与代码管理.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "快速入手Apollo控制代码以及实车实验"
+              "icon": "lucide-file",
+              "title": "git学习与代码管理"
             }
           }
         ]
@@ -76,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "6dcf07d9f8ad5626",
@@ -164,7 +167,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 336.5
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -179,22 +182,22 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "47a7a9553b9d124c",
+  "active": "9a96e2851bb9bccf",
   "lastOpenFiles": [
-    "README.md",
-    "实验笔记/git学习与代码管理.md",
     "实验笔记/Protobuf.md",
     "实验笔记/Docker.md",
+    "实验笔记/git学习与代码管理.md",
+    "实验笔记/dag.md",
     "实验笔记/Bazel.md",
+    "快速入手Apollo控制代码以及实车实验.pdf",
+    "README.md",
     "实验笔记/快速入手Apollo控制代码以及实车实验.md",
     "实验笔记/高精地图制作.md",
     "Docker.pdf",
-    "快速入手Apollo控制代码以及实车实验.pdf",
     "嵌入式学习笔记/引脚复用知识.md",
     "随手记录.md",
     "实验笔记/图片/微信图片_20250522094515.png",
     "实验笔记/图片/微信图片_20250522094522.png",
-    "实验笔记/dag.md",
     "未命名",
     "嵌入式学习笔记",
     "C++提高编程.md",
