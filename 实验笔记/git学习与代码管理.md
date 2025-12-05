@@ -1,24 +1,30 @@
-### **. 安装 Git（如果未安装）**
+1. ## **安装 Git（如果未安装）**
+    
 
 - **Linux（Debian/Ubuntu）**：
+    
 
 ```Bash
 sudo apt update && sudo apt install git -y
 ```
 
-- **macOS**： 
+- **macOS**：
+    
 
 ```Bash
 brew install git  # 需先安装 Homebrew
 ```
 
 - **Windows**： 下载并安装 Git for Windows
+    
 
 ---
 
-### **2. 配置 Git** **SSH** **密钥（如果未配置）**
+2. ## **配置 Git SSH 密钥（如果未配置）**
+    
 
-#### **生成** **SSH** **密钥**（如果已有密钥可跳过）
+3. ### **生成 SSH 密钥**（如果已有密钥可跳过）
+    
 
 ```Bash
 ssh-keygen -t ed25519 -C "your_email@example.com"
@@ -26,24 +32,91 @@ ssh-keygen -t ed25519 -C "your_email@example.com"
 
 一路回车，默认路径保存密钥（`~/.ssh/id_ed25519`）。
 
-#### 将公钥添加到 GitHub
+**操作提示解释**：
 
-1. 查看公钥：
+```Plain
+Enter file in which to save the key (~/.ssh/id_ed25519) 
+```
+
+直接按回车，使用默认路径 `~/.ssh/id_ed25519`。
+
+```Plain
+Enter passphrase (empty for no passphrase) 
+```
+
+输入一个密码（推荐），或直接回车留空（方便但安全性低）。
+
+#### **密钥生成成功输出**
+
+```Bash
+Your identification has been saved in ~/.ssh/id_ed25519
+Your public key has been saved in ~/.ssh/id_ed25519.pub
+The key fingerprint is:
+SHA256:Abc123...xyz your_email@example.com
+```
+
+2. ### **将****公钥****添加到** **GitHub**
+    
+
+3. 查看公钥：
+    
 
 ```Bash
 cat ~/.ssh/id_ed25519.pub
 ```
 
-1. 复制公钥内容，登录 GitHub → Settings → SSH and GPG keys → New SSH key → 粘贴保存。
+2. **输出示例：**
+    
+
+```Bash
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJx7zQ1Z... 邮箱
+```
+
+3. **复制****公钥**： 完整选中 `ssh-ed25519` 开头到邮箱结尾的内容。
+    
+4. **添加至** **GitHub**：
+    
+    1. 登录 GitHub → **Settings** → **SSH** **and** **GPG** **keys** → **New SSH key**。
+        
+    2. **Title**：自定义名称（如 `My Laptop`）。
+        
+    3. **Key type**：保持默认 `Authentication Key`。
+        
+    4. **Key**：粘贴复制的公钥内容。
+        
+    5. 点击 **Add** **SSH** **key**。
+        
+
+5. ### **验证** **SSH** **连接**
+    
+
+```Bash
+ssh -T git@github.com
+```
+
+- **成功提示**：
+    
+
+```Bash
+Hi username! You've successfully authenticated, but GitHub does not provide shell access.
+```
+
+完成上述步骤后，即可通过 SSH 克隆或操作 GitHub 仓库。
 
 ---
 
-### **3.** **克隆****仓库
+3. ## **克隆****仓库**
+    
+
+4. ### **SSH****方案**
+    
+
 ```Bash
 git clone git@github.com:wheelos/apollo.git
 ```
 
 - **成功输出示例**：
+    
 
 ```Bash
 Cloning into 'apollo'...
@@ -55,18 +128,32 @@ Receiving objects: 100% (100/100), 1.23 MiB | 2.50 MiB/s, done.
 Resolving deltas: 100% (20/20), done.
 ```
 
----
+- **进入仓库目录**
+    
 
-### **4. 进入仓库目录**
 ```Bash
 cd apollo
 ```
 
+2. ### **备选方案（使用** **HTTPS****）**
+    
+
+如果不习惯 SSH，可以用 HTTPS 克隆：
+
+```Bash
+git clone https://github.com/wheelos/apollo.git
+```
+
+- **注意**：推送代码时需要输入 GitHub 账号密码。
+    
+
 ---
 
-### **常见问题解决**
+## **常见问题解决**
 
-#### **权限被拒绝（Permission denied）**
+1. ### **权限被拒绝（Permission denied）**
+    
+
 ```Bash
 git@github.com: Permission denied (publickey).
 ```
@@ -79,8 +166,6 @@ git@github.com: Permission denied (publickey).
         
     - 测试 SSH 连接：
         
-    - bash
-        
     
     ```Bash
     ssh -T git@github.com
@@ -89,9 +174,8 @@ git@github.com: Permission denied (publickey).
     - 成功会显示：`You've successfully authenticated, but GitHub does not provide shell access.`
         
 
-#### **仓库不存在（Repository not found）**
-
-bash
+2. ### **仓库不存在（****Repository** **not found）**
+    
 
 ```Bash
 ERROR: Repository not found.
@@ -106,147 +190,8 @@ ERROR: Repository not found.
     - 检查是否有权限访问该仓库（私有仓库需授权）。
         
 
----
-
-### **备选方案（使用 HTTPS）**
-
-如果不习惯 SSH，可以用 HTTPS 克隆：
-
-bash
-
-```Bash
-git clone https://github.com/wheelos/apollo.git
-```
-
-- **注意**：推送代码时需要输入 GitHub 账号密码。
+3. ### **权限错误**
     
-
----
-
-### **后续操作建议**
-
-1. **查看分支**：
-    
-2. bash
-    
-
-```Bash
-git branch -a
-```
-
-1. **切换分支**（如存在）：
-    
-2. bash
-    
-
-```Bash
-git checkout dev
-```
-
-1. **安装依赖**（如果有）：
-    
-2. bash
-    
-
-```Bash
-npm install  # 如果是 Node.js 项目
-```
-
-  
-
-  
-
-## 上述步骤的重复操作，可以选择性观看
-
-以下是生成 ED25519 SSH 密钥的完整步骤：
-
-### **1. 生成 SSH 密钥**
-
-在终端执行以下命令：
-
-bash
-
-```Bash
-ssh-keygen -t ed25519 -C "邮箱"
-```
-
-#### **操作提示解释**：
-
-- **`Enter file in which to save the key (~/.ssh/id_ed25519)`** 直接按回车，使用默认路径 `~/.ssh/id_ed25519`。
-- **`Enter passphrase (empty for no passphrase)`** 输入一个密码（推荐），或直接回车留空（方便但安全性低）。
-    
-
----
-
-### **2. 密钥生成成功输出**
-```Bash
-Your identification has been saved in ~/.ssh/id_ed25519
-Your public key has been saved in ~/.ssh/id_ed25519.pub
-The key fingerprint is:
-SHA256:Abc123...xyz your_email@example.com
-```
-
----
-
-### **3. 将公钥添加到 GitHub**
-
-1. **查看公钥内容**：
-    
-2. bash
-    
-
-```Bash
-cat ~/.ssh/id_ed25519.pub
-```
-
-1. 输出示例：
-
-
-```Bash
-ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJx7zQ1Z... 邮箱
-```
-
-1. **复制公钥**： 完整选中 `ssh-ed25519` 开头到邮箱结尾的内容。
-    
-2. **添加至 GitHub**：
-    
-    1. 登录 GitHub → **Settings** → **SSH and GPG keys** → **New SSH key**。
-        
-    2. **Title**：自定义名称（如 `My Laptop`）。
-        
-    3. **Key type**：保持默认 `Authentication Key`。
-        
-    4. **Key**：粘贴复制的公钥内容。
-        
-    5. 点击 **Add** **SSH key**。
-        
-
----
-
-### **4. 验证 SSH 连接**
-
-bash
-
-```Bash
-ssh -T git@github.com
-```
-
-- **成功提示**：
-    
-- bash
-    
-
-```Bash
-Hi username! You've successfully authenticated, but GitHub does not provide shell access.
-```
-
----
-
-## **常见问题解决**
-
-### **权限错误**
-
-bash
 
 ```Bash
 Permissions 0777 for '~/.ssh/id_ed25519' are too open.
@@ -254,17 +199,14 @@ Permissions 0777 for '~/.ssh/id_ed25519' are too open.
 
 执行以下命令修复权限：
 
-bash
-
 ```Bash
 chmod 600 ~/.ssh/id_ed25519*
 ```
 
-### **密钥冲突**
+4. ### **密钥冲突**
+    
 
 如果已有其他密钥（如 `id_rsa`），可指定新密钥：
-
-bash
 
 ```Bash
 ssh-add ~/.ssh/id_ed25519
@@ -272,7 +214,23 @@ ssh-add ~/.ssh/id_ed25519
 
 ---
 
-完成上述步骤后，即可通过 SSH 克隆或操作 GitHub 仓库。
+### **后续操作建议**
+
+1. **查看分支**：
+    
+
+```Bash
+git branch -a
+```
+
+2. **切换分支**（如存在）：
+    
+
+```Bash
+git checkout dev
+```
+
+---
 
 ## Git clone 加速
 
@@ -295,7 +253,7 @@ https://github.com/docmirror/dev-sidecar/blob/master/doc/linux.md
 
 ## 🚦情况一：只有一个main主分支的开发
 
-前提条件确认：如果是这个项目只有你自己开发，你是这个 GitHub 仓库的组织成员之一，并且使用ssh连接了github，那只要有 **push 权限**，就可以直接把修改推上去。（不是随便一个人clone你的项目都可以修改并提交的，能直接修改你这个仓库的设备必须要在你的github账户上配置了ssh--公钥和私钥是需要配对的）
+前提条件确认：如果是这个项目只有你自己开发，你是这个 GitHub 仓库的组织成员之一，并且使用ssh连接了github，那只要有 **push** **权限**，就可以直接把修改推上去。（不是随便一个人clone你的项目都可以修改并提交的，能直接修改你这个仓库的设备必须要在你的github账户上配置了ssh--公钥和私钥是需要配对的）
 
 ---
 
@@ -398,15 +356,15 @@ git branch
 
 ---
 
-## 🚦情况二：不能直接在main分支开发，需要自己创建分支开发**（PR）协作流程**
+## 🚦情况二：不能直接在main分支开发，需要自己创建分支开发**（****PR****）协作流程**
 
 **前提条件确认：同情况一。**
 
 ## 🚨 要求创建分支提交：
 
-有些组织要求你**不要直接 push 到 main**，而是先新建分支然后提交 Pull Request（PR）
+有些组织要求你**不要直接** **push** **到** **main**，而是先新建分支然后提交 Pull Request（PR）
 
-## 🔁「**Pull Request（PR）协作流程**」
+## 🔁「**Pull Request****（****PR****）协作流程**」
 
 它的核心思想是：
 
@@ -466,7 +424,7 @@ git commit -m "修复登录按钮点击无效的问题"
 
 ---
 
-### ✅ 第 6 步.**推送你的分支到 GitHub**
+### ✅ 第 6 步.**推送你的分支到** **GitHub**
 
 ```Bash
 git push origin fix-login
@@ -476,7 +434,7 @@ git push origin fix-login
 
 ---
 
-### ✅ 第 7 步. **去 GitHub 发起 Pull Request**
+### ✅ 第 7 步. **去** **GitHub** **发起** **Pull Request**
 
 1. 打开 GitHub 页面，进入项目地址
     
@@ -493,7 +451,7 @@ git push origin fix-login
 
 在github上操作，我们创建分支申请合并的时候要提一个issues，页面右边会有显示创建一个分支
 
-![](https://ai.feishu.cn/space/api/box/stream/download/asynccode/?code=YzJhYjY0ZmYyYzgyMGQyOGY5Nzg0Y2ZmMzA5YTU5NDFfc0VlQkQwQVV5UFF3UFhMMUZ5T1I1dElnSWZCbmtsdUFfVG9rZW46WFRUSmJKZlhhb1dmdFF4MzhyU2NlNEZjbmpiXzE3NjQ5NDUyMDU6MTc2NDk0ODgwNV9WNA)![](https://ai.feishu.cn/space/api/box/stream/download/asynccode/?code=YTZhOWJmMjE2NDE0M2VkYmYxYWVkOTIwZTU0ODI0ZTZfTTB4SWttV1ZxSG5mbmdoelVxZktxRzBkR21CWWtKVFBfVG9rZW46R2RPVGI0T2Jwb3dKMEF4YURMYmNOV3J4blhkXzE3NjQ5NDUyMDU6MTc2NDk0ODgwNV9WNA)
+![](https://ai.feishu.cn/space/api/box/stream/download/asynccode/?code=NmQ1MjUyMzgzOTQ1ZGM5NDYyZTk1YzM3YWRhMmNjNzZfR2FsbnJZZDBPM3RQVWpvbDliWGt1RW5uT3h1QnVvUlRfVG9rZW46WFRUSmJKZlhhb1dmdFF4MzhyU2NlNEZjbmpiXzE3NjQ5NDY2MjM6MTc2NDk1MDIyM19WNA)![](https://ai.feishu.cn/space/api/box/stream/download/asynccode/?code=NTk1M2E2NDZhN2MzYTU3NTdkNzAyNzRkZTljODlhZmFfZFBVSXNOMm1xZnVBZkNwR1VVbnRscXZ0TGFSaDJBckJfVG9rZW46R2RPVGI0T2Jwb3dKMEF4YURMYmNOV3J4blhkXzE3NjQ5NDY2MjM6MTc2NDk1MDIyM19WNA)
 
 点击以后会让你选择在哪个分支下创建新的分支，这样创建好以后你就可以
 
