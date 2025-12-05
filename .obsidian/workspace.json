@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "6dcf07d9f8ad5626",
@@ -184,9 +183,9 @@
   },
   "active": "9a96e2851bb9bccf",
   "lastOpenFiles": [
-    "实验笔记/Protobuf.md",
     "实验笔记/Docker.md",
     "实验笔记/git学习与代码管理.md",
+    "实验笔记/Protobuf.md",
     "实验笔记/dag.md",
     "实验笔记/Bazel.md",
     "快速入手Apollo控制代码以及实车实验.pdf",

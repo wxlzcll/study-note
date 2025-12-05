@@ -1,30 +1,20 @@
-1. ## **安装 Git（如果未安装）**
-    
-
+## 1. **安装 Git（如果未安装）**
 - **Linux（Debian/Ubuntu）**：
-    
 
 ```Bash
 sudo apt update && sudo apt install git -y
 ```
-
 - **macOS**：
-    
 
 ```Bash
 brew install git  # 需先安装 Homebrew
 ```
-
 - **Windows**： 下载并安装 Git for Windows
-    
 
 ---
 
-2. ## **配置 Git SSH 密钥（如果未配置）**
-    
-
-3. ### **生成 SSH 密钥**（如果已有密钥可跳过）
-    
+## 2.**配置 Git SSH 密钥（如果未配置）**
+### 2.1**生成 SSH 密钥**（如果已有密钥可跳过）
 
 ```Bash
 ssh-keygen -t ed25519 -C "your_email@example.com"
