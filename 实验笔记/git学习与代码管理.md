@@ -200,9 +200,7 @@ cat ~/.ssh/id_ed25519.pub
 ```
 
 1. 输出示例：
-    
-2. bash
-    
+
 
 ```Bash
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJx7zQ1Z... 邮箱
