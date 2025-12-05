@@ -36,7 +36,7 @@ Enter passphrase (empty for no passphrase)
 
 输入一个密码（推荐），或直接回车留空（方便但安全性低）。
 
-#### **密钥生成成功输出**
+**密钥生成成功输出**
 
 ```Bash
 Your identification has been saved in ~/.ssh/id_ed25519
@@ -45,25 +45,21 @@ The key fingerprint is:
 SHA256:Abc123...xyz your_email@example.com
 ```
 
-2. ### **将****公钥****添加到** **GitHub**
-    
-
-3. 查看公钥：
-    
+### 2.2**将公钥添加到GitHub**
+1. 查看公钥：
 
 ```Bash
 cat ~/.ssh/id_ed25519.pub
 ```
 
 2. **输出示例：**
-    
 
 ```Bash
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJx7zQ1Z... 邮箱
 ```
 
-3. **复制****公钥**： 完整选中 `ssh-ed25519` 开头到邮箱结尾的内容。
-    
+3. **复制公钥**：
+完整选中 `ssh-ed25519` 开头到邮箱结尾的内容。
 4. **添加至** **GitHub**：
     
     1. 登录 GitHub → **Settings** → **SSH** **and** **GPG** **keys** → **New SSH key**。
