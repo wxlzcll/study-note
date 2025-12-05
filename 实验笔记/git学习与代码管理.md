@@ -26,7 +26,7 @@ ssh-keygen -t ed25519 -C "your_email@example.com"
 
 一路回车，默认路径保存密钥（`~/.ssh/id_ed25519`）。
 
-#### **将****公钥****添加到** **GitHub**
+#### 将公钥添加到 GitHub
 
 1. 查看公钥：
 
@@ -173,16 +173,12 @@ ssh-keygen -t ed25519 -C "邮箱"
 #### **操作提示解释**：
 
 - **`Enter file in which to save the key (~/.ssh/id_ed25519)`** 直接按回车，使用默认路径 `~/.ssh/id_ed25519`。
-    
 - **`Enter passphrase (empty for no passphrase)`** 输入一个密码（推荐），或直接回车留空（方便但安全性低）。
     
 
 ---
 
 ### **2. 密钥生成成功输出**
-
-bash
-
 ```Bash
 Your identification has been saved in ~/.ssh/id_ed25519
 Your public key has been saved in ~/.ssh/id_ed25519.pub
