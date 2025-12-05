@@ -58,9 +58,6 @@ Resolving deltas: 100% (20/20), done.
 ---
 
 ### **4. 进入仓库目录**
-
-bash
-
 ```Bash
 cd apollo
 ```
@@ -70,9 +67,6 @@ cd apollo
 ### **常见问题解决**
 
 #### **权限被拒绝（Permission denied）**
-
-bash
-
 ```Bash
 git@github.com: Permission denied (publickey).
 ```
