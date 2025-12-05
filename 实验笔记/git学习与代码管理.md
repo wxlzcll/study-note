@@ -39,17 +39,11 @@ cat ~/.ssh/id_ed25519.pub
 ---
 
 ### **3.** **克隆****仓库
-
-bash
-
 ```Bash
 git clone git@github.com:wheelos/apollo.git
 ```
 
 - **成功输出示例**：
-    
-- bash
-    
 
 ```Bash
 Cloning into 'apollo'...
