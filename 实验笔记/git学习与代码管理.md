@@ -59,7 +59,9 @@ ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJx7zQ1Z... 邮箱
 ```
 
 3. **复制公钥**：
+
 完整选中 `ssh-ed25519` 开头到邮箱结尾的内容。
+
 4. **添加至** **GitHub**：
     1. 登录 GitHub → **Settings** → **SSH** **and** **GPG** **keys** → **New SSH key**。
         
@@ -72,7 +74,7 @@ ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJx7zQ1Z... 邮箱
     5. 点击 **Add** **SSH** **key**。
         
 
-5. ### **验证** **SSH** **连接**
+5.  **验证*SSH 连接**
 
 ```Bash
 ssh -T git@github.com

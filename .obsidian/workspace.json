@@ -20,21 +20,8 @@
               "icon": "lucide-file",
               "title": "git学习与代码管理"
             }
-          },
-          {
-            "id": "c61693937fcb688d",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.10.6"
-              },
-              "icon": "lucide-book-up",
-              "title": "版本说明 1.10.6"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -194,7 +181,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "c61693937fcb688d",
+  "active": "9a96e2851bb9bccf",
   "lastOpenFiles": [
     "实验笔记/Docker.md",
     "实验笔记/git学习与代码管理.md",
