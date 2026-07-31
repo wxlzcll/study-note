@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "未命名.md",
+                "file": "横向控制新旧版对比技术文档.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "未命名"
+              "title": "横向控制新旧版对比技术文档"
             }
           }
         ],
@@ -198,7 +198,7 @@
   },
   "active": "a213924c0c1371b1",
   "lastOpenFiles": [
-    "未命名.md",
+    "横向控制新旧版对比技术文档.md",
     "实验笔记/快速入手Apollo控制代码以及实车实验.md",
     "实验笔记/git学习与代码管理.md",
     "实验笔记/Docker.md",
