@@ -1,0 +1,58 @@
+# ============================================================
+# 方式二：从 GitHub 拉源码编译安装 glog + gflags
+# 优点：可以用最新版本、自定义编译选项，顺便学习 CMake 安装流程
+# 缺点：构建耗时较长（每次重建镜像都要重新编译）
+# ============================================================
+FROM ubuntu:24.04
+
+# 1) 安装编译工具链（编译器 + CMake + git）
+#    注意: 必须装 ca-certificates！基础镜像是最小系统不带 CA 证书包，
+#    git clone 走 https 时会报 "server certificate verification failed"
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        build-essential \
+        cmake \
+        git \
+        ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+# 2) 源码安装 gflags（glog 依赖它，所以先装）
+#    标准三件套: cmake 配置 -> cmake 构建 -> cmake 安装
+#    默认装到 /usr/local（CMake 的 CMAKE_INSTALL_PREFIX 默认值）:
+#       /usr/local/include/gflags/  /usr/local/lib/libgflags.so
+#    两个重要选项（实测踩过的坑）:
+#      -DBUILD_SHARED_LIBS=ON  gflags 默认只编静态库，
+#                              glog 编动态库时链接非 PIC 静态库会报错
+#      -DCMAKE_POSITION_INDEPENDENT_CODE=ON  让所有目标带 -fPIC，双保险
+RUN git clone --depth 1 --branch v2.2.2 https://github.com/gflags/gflags.git /tmp/gflags \
+ && cmake -S /tmp/gflags -B /tmp/gflags/build \
+          -DCMAKE_BUILD_TYPE=Release \
+          -DBUILD_TESTING=OFF \
+          -DBUILD_SHARED_LIBS=ON \
+          -DCMAKE_POSITION_INDEPENDENT_CODE=ON \
+ && cmake --build /tmp/gflags/build -j"$(nproc)" \
+ && cmake --install /tmp/gflags/build \
+ && rm -rf /tmp/gflags
+
+# 3) 源码安装 glog（v0.7.1 是当前最新稳定版）
+#    同样装到 /usr/local:
+#       /usr/local/include/glog/  /usr/local/lib/libglog.so
+RUN git clone --depth 1 --branch v0.7.1 https://github.com/google/glog.git /tmp/glog \
+ && cmake -S /tmp/glog -B /tmp/glog/build \
+          -DCMAKE_BUILD_TYPE=Release \
+          -DBUILD_TESTING=OFF \
+ && cmake --build /tmp/glog/build -j"$(nproc)" \
+ && cmake --install /tmp/glog/build \
+ && rm -rf /tmp/glog
+
+# 4) 刷新动态库缓存，让链接器能找到 /usr/local/lib 下的 libglog.so / libgflags.so
+#    （apt 装的库在 /usr/lib 下，属于系统默认搜索路径，所以不需要这一步；
+#      这是源码安装和 apt 安装的一个重要区别）
+RUN ldconfig
+
+# 5) 拷入示例代码，用 CMake 方式编译（真实项目的标准做法: find_package 找依赖）
+COPY app/ /app/
+RUN cmake -S /app -B /app/build \
+ && cmake --build /app/build -j"$(nproc)" \
+ && ln -s /app/build/demo /app/demo
+
+ENTRYPOINT ["/app/demo"]

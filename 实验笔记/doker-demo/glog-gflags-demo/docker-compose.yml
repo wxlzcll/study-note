@@ -1,0 +1,25 @@
+# 两个服务分别演示两种安装方式。程序跑完容器就退出。
+# 长期开着的开发容器在 docker-compose.dev.yml，用 ./dev-start.sh / ./dev-into.sh。
+# 常用命令:
+#   docker compose up --build      # 构建并运行两个容器
+#   docker compose run --rm apt-version     # 单独跑 apt 版
+#   docker compose run --rm source-version  # 单独跑源码版
+services:
+  # 方式一：apt 包管理器安装
+  apt-version:
+    build:
+      context: .
+      dockerfile: Dockerfile.apt
+    image: glog-demo:apt
+    # --alsologtostderr: 日志既写 /tmp 文件又打到屏幕
+    # （不加这个 flag 的话，glog 默认只写文件，屏幕上只有 stdout 的输出）
+    command: ["--name=APT安装版", "--count=3", "--alsologtostderr"]
+
+  # 方式二：源码编译安装
+  source-version:
+    build:
+      context: .
+      dockerfile: Dockerfile.source
+    image: glog-demo:source
+    # 演示: 传 flag + --v=1 打开 VLOG 详细日志
+    command: ["--name=源码编译版", "--count=5", "--v=1", "--alsologtostderr"]

@@ -1,0 +1,28 @@
+# ============================================================
+# 方式一：apt 包管理器安装 glog + gflags
+# 优点：一条命令搞定、简单、快
+# 缺点：版本由 Ubuntu 仓库决定（Ubuntu 24.04 自带 glog 0.6，较老）
+# ============================================================
+FROM ubuntu:24.04
+
+# 1) 安装编译器 + 两个开发包
+#    libgoogle-glog-dev: 头文件 /usr/include/glog/*.h + 库 libglog.so
+#    libgflags-dev     : 头文件 /usr/include/gflags/*.h + 库 libgflags.so
+#    （dev 包 = 头文件 + 库文件，运行程序必需；没有 dev 后缀的包只有运行库）
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        build-essential \
+        libgoogle-glog-dev \
+        libgflags-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# 2) 拷入示例代码
+COPY app/ /app/
+
+# 3) g++ 手动链接编译（最直观的写法）在镜像中编译的程序
+#    -lglog -lgflags: 链接两个库
+#    -lpthread: glog 用到了多线程库（新版 glibc 已合并，写上更保险）
+RUN g++ /app/main.cc -o /app/demo -lglog -lgflags -lpthread
+
+# 4) 入口设为示例程序，运行时可以直接追加 flag:
+#    docker run --rm glog-demo:apt --name=Bob --count=5
+ENTRYPOINT ["/app/demo"]

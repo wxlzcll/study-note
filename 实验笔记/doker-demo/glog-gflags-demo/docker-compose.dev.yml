@@ -1,0 +1,19 @@
+# 长期开发容器，和 docker-compose.yml 里“跑完就退出”的两个示例分开。
+# 所以原来的 `docker compose up --build` 不会把这个容器拉起来。
+#
+#   ./dev-start.sh     # 后台启动，并在容器里建立用户 wxl
+#   ./dev-into.sh      # 以 wxl 进入，提示符是 wxl@in-dev-docker:/docker$
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.apt
+    image: glog-demo:apt
+    container_name: glog-dev
+    hostname: in-dev-docker
+    working_dir: /docker
+    # 本机 /home/wxl/docker 挂到容器的 /docker（compose 文件在子目录里，所以写 ..）
+    volumes:
+      - ..:/docker
+    # 主进程是 sleep，不会自己结束。进去用 dev-into.sh（docker exec bash）。
+    entrypoint: ["sleep", "infinity"]
